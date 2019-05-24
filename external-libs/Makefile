@@ -51,11 +51,11 @@ clean:
 	script/clean.sh
 
 distclean: clean
-	find SuperiorCoin    -type f -a ! -name ".gitignore" -a ! -name "wallet2_api.h" -exec rm {} \;
+	find TheSuperiorCoin    -type f -a ! -name ".gitignore" -a ! -name "wallet2_api.h" -exec rm {} \;
 	find boost     -type f -a ! -name ".gitignore" -exec rm {} \;
 	find libsodium -type f -a ! -name ".gitignore" -exec rm {} \;
 	find openssl   -type f -a ! -name ".gitignore" -exec rm {} \;
 
-archive: libsodium openssl boost SuperiorCoin
+archive: libsodium openssl boost TheSuperiorCoin
 	echo "Packing external-libs"
-	tar czfv libsodium openssl boost SuperiorCoin external-libs.tgz
+	tar czfv libsodium openssl boost TheSuperiorCoin external-libs.tgz

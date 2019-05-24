@@ -9,12 +9,12 @@ cd $EXTERNAL_LIBS_BUILD_ROOT
 url="https://github.com/RomyToklio/TheSuperiorCoin.git"
 version="release-v0.14.0-supwallet"
 
-if [ ! -d "SuperiorCoin" ]; then
+if [ ! -d "TheSuperiorCoin" ]; then
   git clone ${url} -b ${version}
-  cd SuperiorCoin
+  cd TheSuperiorCoin
   git submodule update --recursive --init
 else
-  cd SuperiorCoin
+  cd TheSuperiorCoin
   git checkout ${version}
   git pull
   git submodule update --recursive --init
