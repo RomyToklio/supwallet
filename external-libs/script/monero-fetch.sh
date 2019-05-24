@@ -6,15 +6,15 @@ source script/env.sh
 
 cd $EXTERNAL_LIBS_BUILD_ROOT
 
-url="https://github.com/m2049r/monero"
-version="release-v0.14.0-monerujo"
+url="https://github.com/RomyToklio/TheSuperiorCoin.git"
+version="release-v0.14.0-supwallet"
 
-if [ ! -d "monero" ]; then
+if [ ! -d "SuperiorCoin" ]; then
   git clone ${url} -b ${version}
-  cd monero
+  cd SuperiorCoin
   git submodule update --recursive --init
 else
-  cd monero
+  cd SuperiorCoin
   git checkout ${version}
   git pull
   git submodule update --recursive --init
