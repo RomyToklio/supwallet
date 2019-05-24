@@ -37,7 +37,7 @@ public class BarcodeData {
     public static final String XMR_AMOUNT = "tx_amount";
     public static final String XMR_DESCRIPTION = "tx_description";
 
-    public static final String OA_XMR_ASSET = "xmr";
+    public static final String OA_XMR_ASSET = "sup";
     public static final String OA_BTC_ASSET = "btc";
 
     static final String BTC_SCHEME = "bitcoin";
@@ -46,7 +46,7 @@ public class BarcodeData {
     static final String BTC_BIP70_PARM = "r";
 
     public enum Asset {
-        XMR, BTC
+        SUP, BTC
     }
 
     public enum Security {
@@ -106,7 +106,7 @@ public class BarcodeData {
     }
 
     public String getUriString() {
-        if (asset != Asset.XMR) throw new IllegalStateException("We can only do XMR stuff!");
+        if (asset != Asset.SUP) throw new IllegalStateException("We can only do XMR stuff!");
         StringBuilder sb = new StringBuilder();
         sb.append(BarcodeData.XMR_SCHEME).append(address);
         boolean first = true;
@@ -207,7 +207,7 @@ public class BarcodeData {
             Timber.d("address invalid");
             return null;
         }
-        return new BarcodeData(Asset.XMR, address, paymentId, description, amount);
+        return new BarcodeData(Asset.SUP, address, paymentId, description, amount);
     }
 
     static public BarcodeData parseMoneroNaked(String address) {
@@ -220,7 +220,7 @@ public class BarcodeData {
             return null;
         }
 
-        return new BarcodeData(Asset.XMR, address);
+        return new BarcodeData(Asset.SUP, address);
     }
 
     // bitcoin:mpQ84J43EURZHkCnXbyQ4PpNDLLBqdsMW2?amount=0.01
@@ -332,7 +332,7 @@ public class BarcodeData {
                 Timber.d("XMR address invalid");
                 return null;
             }
-            asset = Asset.XMR;
+            asset = Asset.SUP;
         } else if (OA_BTC_ASSET.equals(oaAsset)) {
             if (!BitcoinAddressValidator.validate(address)) {
                 Timber.d("BTC address invalid");

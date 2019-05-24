@@ -258,14 +258,16 @@ public class NodeFragment extends Fragment
                     }
                 });
                 // also seed with monero seed nodes (see p2p/net_node.inl:410 in monero src)
-                seedList.add(new NodeInfo(new InetSocketAddress("107.152.130.98", 18080)));
-                seedList.add(new NodeInfo(new InetSocketAddress("212.83.175.67", 18080)));
-                seedList.add(new NodeInfo(new InetSocketAddress("5.9.100.248", 18080)));
-                seedList.add(new NodeInfo(new InetSocketAddress("163.172.182.165", 18080)));
-                seedList.add(new NodeInfo(new InetSocketAddress("161.67.132.39", 18080)));
-                seedList.add(new NodeInfo(new InetSocketAddress("198.74.231.92", 18080)));
-                seedList.add(new NodeInfo(new InetSocketAddress("195.154.123.123", 18080)));
-                seedList.add(new NodeInfo(new InetSocketAddress("212.83.172.165", 18080)));
+                seedList.add(new NodeInfo(new InetSocketAddress("52.168.91.103", 17369))); //poolserver
+                seedList.add(new NodeInfo(new InetSocketAddress("52.168.12.187", 17369))); //blockchainexplorer
+                seedList.add(new NodeInfo(new InetSocketAddress("179.49.115.2", 17369))); //HondurasDNS
+                seedList.add(new NodeInfo(new InetSocketAddress("13.91.59.2", 17369))); //superminer
+                seedList.add(new NodeInfo(new InetSocketAddress("191.232.179.253", 17369))); //mysuperiorcoin
+                seedList.add(new NodeInfo(new InetSocketAddress("20.188.110.55", 17369))); //opendaemon
+                seedList.add(new NodeInfo(new InetSocketAddress("179.49.117.130", 17369))); //Honduras-Daemon
+                seedList.add(new NodeInfo(new InetSocketAddress("13.84.182.118", 17369))); //test pool
+
+
                 d.seedPeers(seedList);
                 d.awaitTermination(NODES_TO_FIND);
             }

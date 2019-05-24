@@ -285,10 +285,10 @@ public class SendFragment extends Fragment
     }
 
     enum Mode {
-        XMR, BTC
+        SUP, BTC
     }
 
-    Mode mode = Mode.XMR;
+    Mode mode = Mode.SUP;
 
     @Override
     public void setMode(Mode aMode) {
@@ -369,7 +369,7 @@ public class SendFragment extends Fragment
         public SendWizardFragment getItem(int position) {
             Timber.d("getItem(%d) CREATE", position);
             Timber.d("Mode=%s", mode.toString());
-            if (mode == Mode.XMR) {
+            if (mode == Mode.SUP) {
                 switch (position) {
                     case POS_ADDRESS:
                         return SendAddressWizardFragment.newInstance(SendFragment.this);

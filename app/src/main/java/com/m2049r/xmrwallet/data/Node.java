@@ -296,13 +296,13 @@ public class Node {
         if (DEFAULT_LEVIN_PORT > 0) return DEFAULT_LEVIN_PORT;
         switch (WalletManager.getInstance().getNetworkType()) {
             case NetworkType_Mainnet:
-                DEFAULT_LEVIN_PORT = 18080;
+                DEFAULT_LEVIN_PORT = 17369;
                 break;
             case NetworkType_Testnet:
-                DEFAULT_LEVIN_PORT = 28080;
+                DEFAULT_LEVIN_PORT = 27080;
                 break;
             case NetworkType_Stagenet:
-                DEFAULT_LEVIN_PORT = 38080;
+                DEFAULT_LEVIN_PORT = 37080;
                 break;
             default:
                 throw new IllegalStateException("unsupported net " + WalletManager.getInstance().getNetworkType());
@@ -317,13 +317,13 @@ public class Node {
         if (DEFAULT_RPC_PORT > 0) return DEFAULT_RPC_PORT;
         switch (WalletManager.getInstance().getNetworkType()) {
             case NetworkType_Mainnet:
-                DEFAULT_RPC_PORT = 18081;
+                DEFAULT_RPC_PORT = 16035;
                 break;
             case NetworkType_Testnet:
-                DEFAULT_RPC_PORT = 28081;
+                DEFAULT_RPC_PORT = 27081;
                 break;
             case NetworkType_Stagenet:
-                DEFAULT_RPC_PORT = 38081;
+                DEFAULT_RPC_PORT = 37081;
                 break;
             default:
                 throw new IllegalStateException("unsupported net " + WalletManager.getInstance().getNetworkType());
