@@ -295,7 +295,7 @@ public class SendFragment extends Fragment
         if (mode != aMode) {
             mode = aMode;
             switch (aMode) {
-                case XMR:
+                case SUP:
                     txData = new TxData();
                     break;
                 case BTC:

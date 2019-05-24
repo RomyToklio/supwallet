@@ -367,7 +367,7 @@ public class ExchangeView extends LinearLayout
             }
             tvAmountB.setText(xmrAmount);
         } else { // no XMR currency - cannot happen!
-            Timber.e("No XMR currency!");
+            Timber.e("No SUP currency!");
             setXmr(null);
             notXmrAmount = null;
             return;
@@ -393,7 +393,7 @@ public class ExchangeView extends LinearLayout
                     setXmr(null);
                     notXmrAmount = cleanAmount;
                 } else { // no XMR currency - cannot happen!
-                    Timber.e("No XMR currency!");
+                    Timber.e("No SUP currency!");
                     setXmr(null);
                     notXmrAmount = null;
                     return false;

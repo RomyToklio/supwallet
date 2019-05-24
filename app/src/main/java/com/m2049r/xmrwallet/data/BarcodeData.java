@@ -106,7 +106,7 @@ public class BarcodeData {
     }
 
     public String getUriString() {
-        if (asset != Asset.SUP) throw new IllegalStateException("We can only do XMR stuff!");
+        if (asset != Asset.SUP) throw new IllegalStateException("We can only do SUP stuff!");
         StringBuilder sb = new StringBuilder();
         sb.append(BarcodeData.XMR_SCHEME).append(address);
         boolean first = true;
@@ -329,7 +329,7 @@ public class BarcodeData {
         Asset asset;
         if (OA_XMR_ASSET.equals(oaAsset)) {
             if (!Wallet.isAddressValid(address)) {
-                Timber.d("XMR address invalid");
+                Timber.d("SUP address invalid");
                 return null;
             }
             asset = Asset.SUP;

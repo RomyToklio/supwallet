@@ -73,7 +73,7 @@ public class ExchangeRateTest {
     public void queryExchangeRate_shouldBeGetMethod()
             throws InterruptedException {
 
-        exchangeApi.queryExchangeRate("XMR", "EUR", mockExchangeCallback);
+        exchangeApi.queryExchangeRate("SUP", "EUR", mockExchangeCallback);
 
         RecordedRequest request = mockWebServer.takeRequest();
         assertEquals("GET", request.getMethod());
@@ -83,7 +83,7 @@ public class ExchangeRateTest {
     public void queryExchangeRate_shouldHavePairInUrl()
             throws InterruptedException {
 
-        exchangeApi.queryExchangeRate("XMR", "EUR", mockExchangeCallback);
+        exchangeApi.queryExchangeRate("SUP", "EUR", mockExchangeCallback);
 
         RecordedRequest request = mockWebServer.takeRequest();
         assertEquals("/328/?convert=EUR", request.getPath());
@@ -92,7 +92,7 @@ public class ExchangeRateTest {
     @Test
     public void queryExchangeRate_wasSuccessfulShouldRespondWithRate()
             throws TimeoutException {
-        final String base = "XMR";
+        final String base = "SUP";
         final String quote = "EUR";
         final double rate = 1.56;
         MockResponse jsonMockResponse = new MockResponse().setBody(
@@ -120,7 +120,7 @@ public class ExchangeRateTest {
     @Test
     public void queryExchangeRate_wasSuccessfulShouldRespondWithRateUSD()
             throws TimeoutException {
-        final String base = "XMR";
+        final String base = "SUP";
         final String quote = "USD";
         final double rate = 1.56;
         MockResponse jsonMockResponse = new MockResponse().setBody(
@@ -150,7 +150,7 @@ public class ExchangeRateTest {
             throws TimeoutException {
         mockWebServer.enqueue(new MockResponse().setResponseCode(500));
 
-        exchangeApi.queryExchangeRate("XMR", "USD", new ExchangeCallback() {
+        exchangeApi.queryExchangeRate("SUP", "USD", new ExchangeCallback() {
             @Override
             public void onSuccess(final ExchangeRate exchangeRate) {
                 waiter.fail();
@@ -175,7 +175,7 @@ public class ExchangeRateTest {
                 createMockExchangeRateErrorResponse());
         mockWebServer.enqueue(jsonMockResponse);
 
-        exchangeApi.queryExchangeRate("XMR", "ABC", new ExchangeCallback() {
+        exchangeApi.queryExchangeRate("SUP", "ABC", new ExchangeCallback() {
             @Override
             public void onSuccess(final ExchangeRate exchangeRate) {
                 waiter.fail();
@@ -198,11 +198,11 @@ public class ExchangeRateTest {
     private String createMockExchangeRateResponse(final String base, final String quote, final double rate) {
         return "{\n" +
                 "    \"data\": {\n" +
-                "        \"id\": 328, \n" +
-                "        \"name\": \"Monero\", \n" +
+                "        \"id\": 2522, \n" +
+                "        \"name\": \"Superior Coin\", \n" +
                 "        \"symbol\": \"" + base + "\", \n" +
-                "        \"website_slug\": \"monero\", \n" +
-                "        \"rank\": 12, \n" +
+                "        \"website_slug\": \"superior-coin\", \n" +
+                "        \"rank\": 2098, \n" +
                 "        \"circulating_supply\": 16112286.0, \n" +
                 "        \"total_supply\": 16112286.0, \n" +
                 "        \"max_supply\": null, \n" +
